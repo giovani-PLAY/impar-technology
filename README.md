@@ -16,3 +16,8 @@ Imagens fornecidas pelo titular do projeto para uso institucional. Confirmar aut
 
 ## Validação
 Antes da publicação, confira a navegação por teclado e em celular, as quatro imagens da galeria, o destino do WhatsApp e o endereço no mapa.
+
+## Portfólio para recrutadores
+A página profissional de Giovani Barbare está em [portfolio/index.html](portfolio/index.html), com versão em inglês em [portfolio/en/index.html](portfolio/en/index.html). Os critérios de evidência e a lista de verificação estão em [portfolio/README.md](portfolio/README.md).
+
+**Atenção:** incluir um arquivo no repositório não significa que o site ou a página foi publicada no GitHub Pages. A publicação depende de revisão, merge e configuração/verificação do Pages.
