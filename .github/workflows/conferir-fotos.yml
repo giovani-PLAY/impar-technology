@@ -11,46 +11,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Testar página em oito larguras
-        shell: bash
         run: |
-          set -eu
-          cat > qa.html <<'HTML'
-          <!doctype html><meta charset="utf-8"><style>iframe{border:0}</style><pre id="resultado"></pre><script>
-          async function testar() {
-            const log = document.querySelector('pre');
-            for (const width of [320,360,390,430,768,900,1024,1440]) {
-              const frame = document.createElement('iframe');
-              frame.width = width; frame.height = 844; frame.src = 'index.html';
-              const ready = new Promise(resolve => frame.onload = resolve);
-              document.body.append(frame); await ready;
-              const d = frame.contentDocument;
-              const imgs = [...d.images];
-              for (const img of imgs) {img.loading='eager'; await img.decode();}
-              const menu=d.querySelector('.menu-toggle');
-              if (frame.contentWindow.getComputedStyle(menu).display!=='none') {
-                menu.click(); if(menu.getAttribute('aria-expanded')!=='true') throw Error('abertura do menu');
-                d.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape'}));
-                if(menu.getAttribute('aria-expanded')!=='false') throw Error('fechamento do menu');
+          npm install --prefix "$RUNNER_TEMP/browser" --no-audit --no-fund --ignore-scripts playwright-core@1.55.0
+          python3 -m http.server 8744 > /tmp/impar-http.log 2>&1 &
+          export CHROME_PATH="$(which google-chrome)" NODE_PATH="$RUNNER_TEMP/browser/node_modules"
+          node <<'JS'
+          const { chromium } = require('playwright-core');
+          const assert = require('node:assert/strict');
+          (async () => {
+            const browser = await chromium.launch({executablePath: process.env.CHROME_PATH, args:['--no-sandbox']});
+            try {
+              for (const width of [320,360,390,430,768,900,1024,1440]) {
+                const p = await browser.newPage({viewport:{width,height:844},reducedMotion:'reduce'});
+                await p.goto('http://localhost:8744/index.html');
+                const menu = p.locator('.menu-toggle');
+                if(await menu.isVisible()) {
+                  await menu.click(); await p.keyboard.press('Escape');
+                  assert.equal(await menu.getAttribute('aria-expanded'),'false');
+                  await menu.click(); await p.locator('nav a[href="#contato"]').click();
+                  assert(p.url().endsWith('#contato'));
+                }
+                for(const el of await p.locator('img').all()) {
+                  await el.scrollIntoViewIfNeeded(); await el.evaluate(i => i.decode());
+                }
+                assert.equal(await p.locator('.preview-link').count(),5);
+                assert.equal(await p.locator('.editorial-photo').count(),4);
+                const overflow = await p.evaluate(() => document.documentElement.scrollWidth > innerWidth ? [...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth+1).map(e=>e.className) : []);
+                assert.deepEqual(overflow,[],String(width)+' '+overflow.join(','));
+                console.log('PASS',width); await p.close();
               }
-              if(d.documentElement.scrollWidth > d.documentElement.clientWidth+1) {
-                const excess=[...d.body.querySelectorAll('*')].filter(e=>e.getBoundingClientRect().right>d.documentElement.clientWidth+1).map(e=>e.className);
-                throw Error(width+' overflow '+excess.join(','));
-              }
-              if (d.querySelectorAll('.preview-link').length!==5 || d.querySelectorAll('.editorial-photo').length!==4) throw Error('quantidade de imagens');
-              for(const a of d.querySelectorAll('a[href^="#"]')) if(!d.getElementById(a.hash.slice(1))) throw Error(a.hash);
-              log.textContent+=' OK '+width; frame.remove();
-            }
-            log.textContent+=' VALIDADO';
-          }
-          testar().catch(e=>document.querySelector('pre').textContent+=' FALHA '+e);
-          </script>
-          HTML
-          python3 -m http.server 8744 > /tmp/http-log 2>&1 &
-          for n in {1..20}; do curl -fsS http://localhost:8744/index.html >/dev/null && break; sleep 0.25; done
-          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=45000 --dump-dom http://localhost:8744/qa.html > /tmp/result.html
-          python3 - <<'PY'
-          import re
-          result=re.search(r'<pre id="resultado">(.*?)</pre>',open('/tmp/result.html').read()).group(1)
-          print(result)
-          assert result.endswith('VALIDADO')
-          PY
+            } finally {await browser.close();}
+          })().catch(e=>{console.error(e);process.exitCode=1;});
+          JS
