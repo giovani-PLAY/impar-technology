@@ -19,3 +19,34 @@
 .contact-card .outline-dark{margin-top:12px;border:1px solid #abbfc5;color:#103044;background:#fff}
 @media(max-width:900px){.photo-grid{grid-template-columns:1fr 1fr}.photo-card.photo-large{grid-row:span 1}.photo-card.photo-wide{grid-column:span 2}}
 @media(max-width:600px){.photo-grid{grid-template-columns:1fr}.photo-card,.photo-card img,.photo-card.photo-large,.photo-card.photo-large img{min-height:270px;max-height:460px}.photo-card.photo-wide{grid-column:auto}.photo-card.photo-wide img{aspect-ratio:auto}.photo-card.photo-large img{object-position:center 20%}}
+
+/* Fotos institucionais em sua proporção original, com legenda externa. */
+.editorial-pair {display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:clamp(24px,5vw,72px)}
+.editorial-pair .body-copy {margin-top:24px}
+.editorial-photo {margin:0;justify-self:center;width:100%;max-width:370px}
+.editorial-photo img {display:block;width:auto;max-width:100%;height:auto;max-height:370px;margin:auto;border-radius:12px}
+.editorial-photo figcaption {display:flex;justify-content:center;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin-top:10px;font-size:.83rem}
+.editorial-photo figcaption span {font-size:.75rem}
+#metodo .steps {margin-top:32px}
+#contato .editorial-photo {margin:24px 0 0;max-width:450px}
+.project-media {display:grid;align-content:center;min-width:0;background:#f2f4f4;padding:20px;gap:14px}
+.preview-link {display:grid;justify-items:center;gap:7px;min-width:0;color:#183f49;font-size:.85rem;font-weight:650;text-decoration:underline}
+.preview-link img {display:block;width:100%;height:auto;border-radius:5px}
+.turbo .preview-link img {width:auto;max-height:360px;max-width:100%}
+.educa .preview-link img {width:auto;max-width:100%;max-height:200px}
+@media(max-width:900px){
+ .editorial-pair,.contact-layout {grid-template-columns:minmax(0,1fr);gap:22px}
+ .editorial-photo img {max-height:300px}
+}
+@media(max-width:760px){
+ .hero-layout {padding:38px 0 24px}
+ .hero-art {min-height:180px;margin:8px 0 0}
+ .hero-art img {width:min(175px,56%)}
+ .hero-art .orbit,.art-label,.hero-traits {display:none}
+ .section {padding:48px 0}
+ .project-card .project-text {grid-row:1;padding:22px}
+ .project-media {padding:14px}
+ .service {min-height:0}
+ .nav nav.open {max-height:calc(100dvh - 68px);overflow-y:auto}
+ .preview-link span {padding:5px}
+}
