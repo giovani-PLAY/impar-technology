@@ -26,7 +26,7 @@ section{padding:65px 0}section.odd{background:#092337}h2{font-size:clamp(1.8rem,
 footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.87rem}
 @media(max-width:730px){header .wrap{flex-direction:column;align-items:flex-start;padding-block:15px;gap:9px}.hero{padding:55px 0}.grid{grid-template-columns:1fr}section{padding:50px 0}.wrap{padding-inline:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style></head>
+.proof-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:16px 0}.proof-gallery[hidden]{display:none}.proof-figure{margin:0;min-width:0}.proof-figure img{display:block;width:100%;max-height:440px;object-fit:contain;background:#061725;border:1px solid var(--line);border-radius:12px}.proof-figure figcaption{font-size:.79rem;color:var(--muted);margin-top:6px}.proof-gallery video{width:100%;border-radius:12px;border:1px solid var(--line);background:#061725;max-height:440px}</style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header><div class="wrap"><a class="logo" href="../">GIOVANI <span>BARBARE</span></a><nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#background">Background</a><a href="#contact">Contact</a><a href="../" lang="pt-BR">Português</a></nav></div></header>
@@ -34,10 +34,10 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <section class="hero"><div class="wrap"><div class="overline">Developer portfolio · Brazil · Open to remote roles</div><h1>Turning real-world problems into <em>digital solutions.</em></h1><p class="lead">I'm Giovani Marcelo Barbare Junior. I build and prototype mobile and web projects using React Native, React and TypeScript, combining technical work with IT consulting and a product mindset.</p><div class="actions"><a class="btn" href="#projects">Explore my projects</a><a class="btn alt" href="https://github.com/giovani-PLAY" target="_blank" rel="noopener noreferrer">GitHub</a><a class="btn alt" href="https://www.linkedin.com/in/giovani-barbare-426a23270/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div></section>
 <section id="projects"><div class="wrap"><div class="overline">01 / Selected projects</div><h2>Work in progress, evidence in focus</h2><p class="lead2">These are independent projects at different maturity levels. Public source code, private prototypes and unverified features are explicitly distinguished.</p><div class="grid">
 <article class="card"><div class="tag">Public source · HTML / CSS / JavaScript</div><h3>Ímpar Technology website</h3><p>Responsive institutional website, with semantic HTML, CSS and JavaScript. Its source code can be inspected publicly.</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div><div class="status">Public source available; GitHub Pages deployment not independently verified.</div><p><a href="https://github.com/giovani-PLAY/impar-technology" target="_blank" rel="noopener noreferrer">View the source code</a></p></article>
-<article class="card"><div class="tag">Android · React Native / Expo</div><h3>Ímpar Turbo</h3><p>An Android application prototype exploring device information, storage analysis and practical maintenance guidance.</p><div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span></div><div class="status">In development. Source is private; a validated public demo is pending.</div></article>
-<article class="card"><div class="tag">Education · Web platform</div><h3>Educa Brasil</h3><p>An educational platform project for secondary education support and Brazilian ENEM exam preparation, including learning flows, exercises and data organization.</p><div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Supabase</span></div><div class="status">Platform and learning materials are under development; not released as a finished product.</div></article>
+<article class="card"><div class="tag">Android · React Native / Expo</div><h3>Ímpar Turbo</h3><p>An Android application prototype exploring device information, storage analysis and practical maintenance guidance.</p><div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span></div><div class="proof-gallery" data-proof="turbo" aria-label="Project evidence" hidden></div><div class="status">In development. Source is private; a validated public demo is pending.</div></article>
+<article class="card"><div class="tag">Education · Web platform</div><h3>Educa Brasil</h3><p>An educational platform project for secondary education support and Brazilian ENEM exam preparation, including learning flows, exercises and data organization.</p><div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Supabase</span></div><div class="proof-gallery" data-proof="educa" aria-label="Project evidence" hidden></div><div class="status">Platform and learning materials are under development; not released as a finished product.</div></article>
 <article class="card"><div class="tag">Native Android · Technical review pending</div><h3>Aprende Brasil — Kotlin experiment</h3><p>A parallel native Android version documented with Kotlin, Jetpack Compose and Room. Reported features and test results require independent verification.</p><div class="chips"><span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span><span class="chip">Room</span></div><div class="status">Technical report available privately; full source and real-device tests have not been verified.</div></article>
-</div><p class="note">Additional initiatives include a mobile game prototype and a Shopify e-commerce project. Proprietary source code, private data, credentials and unreleased APKs are not published here.</p></div></section>
+<article class="card"><div class="tag">Mobile game · engine-produced frame</div><h3>Operação Horizonte</h3><p>Mobile action game prototype with touch controls. A frame generated by the v1.0.13 rendering routine is included in the portfolio evidence material; it does not prove real-device performance.</p><div class="status">A genuine rendered frame is available; verified gameplay video is pending.</div><div class="proof-gallery" data-proof="horizonte" aria-label="Operação Horizonte evidence" hidden></div></article></div><p class="note">An additional initiative is a Shopify e-commerce project. Proprietary source code, private data, credentials and unreleased APKs are not published here.</p></div></section>
 <section class="odd" id="skills"><div class="wrap"><div class="overline">02 / Technical direction</div><h2>Mobile, front-end and product thinking</h2><div class="grid">
 <div class="card"><h3>Development tools</h3><p>React, React Native, Expo, TypeScript, JavaScript, Git/GitHub and responsive interface development.</p><div class="chips"><span class="chip">React</span><span class="chip">React Native</span><span class="chip">TypeScript</span><span class="chip">Git</span></div></div>
 <div class="card"><h3>Learning and quality</h3><p>Project experience with Supabase and PostgreSQL. Flutter and Dart are at introductory study level; automated test claims are reserved for independently verified evidence.</p><div class="chips"><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">Flutter/Dart: beginner</span></div></div>
@@ -46,4 +46,36 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <section class="odd" id="contact"><div class="wrap"><div class="overline">04 / Opportunities</div><h2>Let's connect</h2><p class="lead2">I'm interested in remote Junior Mobile Developer, React Native Developer and Junior React Front-end opportunities. Advanced English level is self-reported.</p><div class="actions"><a class="btn" href="https://www.linkedin.com/in/giovani-barbare-426a23270/" target="_blank" rel="noopener noreferrer">Contact via LinkedIn</a><a class="btn alt" href="https://github.com/giovani-PLAY" target="_blank" rel="noopener noreferrer">Browse GitHub</a></div></div></section>
 </main>
 <footer><div class="wrap">© 2026 Giovani Marcelo Barbare Junior · <a href="../" lang="pt-BR">Português</a> · <a href="../../">Ímpar Technology</a></div></footer>
-</body></html>
+<script>
+(function(){
+  "use strict";
+  const media={
+    educa:{images:[
+      {src:"media/educa-brasil-entrada.webp",alt:"Learn Brazil visual preview, welcome screen; Google sign-in is simulated",caption:"Visual preview from Oct 19, 2026 — simulated sign-in"},
+      {src:"media/educa-brasil-cadastro.webp",alt:"Date of birth step in a non-production visual preview",caption:"Registration screen preview — no real user data"}
+    ],video:"media/educa-brasil-demo.mp4"},
+    turbo:{images:[],video:"media/impar-turbo-demo.mp4"},
+    horizonte:{images:[{src:"media/operacao-horizonte-quadro.webp",alt:"Frame created by the game's rendering routine showing aircraft and terrain",caption:"Frame generated by v1.0.13 rendering routine; not a device FPS measurement"}],video:"media/operacao-horizonte-demo.mp4"}
+  };
+  for(const gallery of document.querySelectorAll('[data-proof]')){
+    const set=media[gallery.dataset.proof];if(!set)continue;
+    for(const pic of set.images){
+      const probe=new Image();
+      probe.onload=()=>{
+        const figure=document.createElement('figure');figure.className='proof-figure';
+        const img=document.createElement('img');img.src=pic.src;img.alt=pic.alt;img.loading='lazy';img.decoding='async';img.width=390;img.height=844;
+        const caption=document.createElement('figcaption');caption.textContent=pic.caption;
+        figure.append(img,caption);gallery.append(figure);gallery.hidden=false;
+      };
+      probe.src=pic.src;
+    }
+    fetch(set.video,{method:'HEAD'}).then(response=>{
+      if(!response.ok) return;
+      const figure=document.createElement('figure');figure.className='proof-figure';
+      const video=document.createElement('video');video.src=set.video;video.controls=true;video.playsInline=true;video.preload='none';video.setAttribute('aria-label','Recorded app demonstration video');
+      const caption=document.createElement('figcaption');caption.textContent='Recorded demonstration — verify version and shown features';
+      figure.append(video,caption);gallery.append(figure);gallery.hidden=false;
+    }).catch(()=>{});
+  }
+})();
+</script></body></html>
