@@ -41,7 +41,7 @@
     footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
     @media(max-width:760px){.nav{align-items:flex-start;padding-block:15px;flex-direction:column;gap:10px}.hero .container{padding-block:56px 62px}section{padding-block:50px}.grid,.evidence{grid-template-columns:1fr}.card{padding:22px}.container{padding-inline:20px}nav{gap:14px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  </style>
+  .proof-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:16px 0}.proof-gallery[hidden]{display:none}.proof-figure{margin:0;min-width:0}.proof-figure img{display:block;width:100%;max-height:440px;object-fit:contain;background:#061725;border:1px solid var(--line);border-radius:12px}.proof-figure figcaption{font-size:.79rem;color:var(--muted);margin-top:6px}.proof-gallery video{width:100%;border-radius:12px;border:1px solid var(--line);background:#061725;max-height:440px}</style>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -62,11 +62,11 @@
   <p class="intro">Projetos próprios com estágios de maturidade diferentes. Distingo demonstração pública, protótipo em desenvolvimento e funcionalidades ainda não validadas.</p>
   <div class="grid">
     <article class="card"><div class="tag">Código público · HTML / CSS / JavaScript</div><h3>Site institucional Ímpar Technology</h3><p>Site responsivo com navegação, apresentação de soluções e projetos, usando HTML semântico, CSS e JavaScript. Este é o exemplo com código publicamente inspecionável.</p><div class="stack"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">GitHub</span></div><div class="status">Código público disponível; publicação no GitHub Pages deve ser verificada.</div><p><a href="https://github.com/giovani-PLAY/impar-technology" target="_blank" rel="noopener noreferrer">Examinar código do site</a></p></article>
-    <article class="card"><div class="tag">Mobile · React Native / Expo / TypeScript</div><h3>Ímpar Turbo</h3><p>Protótipo Android voltado a informações e diagnóstico do dispositivo, análise de armazenamento e orientações de manutenção conscientes das limitações do Android.</p><div class="stack"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span></div><div class="status">Projeto em desenvolvimento; código privado e demonstração pública pendente.</div><p class="small">Capturas reais e vídeo demonstrativo serão incluídos após revisão de privacidade e validação.</p></article>
-    <article class="card"><div class="tag">Educação · React / TypeScript / Supabase</div><h3>Educa Brasil</h3><p>Plataforma de reforço escolar e preparação para o ENEM. Trabalho em organização de conteúdo, experiências de estudo, interfaces e estruturação de dados.</p><div class="stack"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span></div><div class="status">Plataforma e acervo em desenvolvimento; não publicada como produto final.</div></article>
+    <article class="card"><div class="tag">Mobile · React Native / Expo / TypeScript</div><h3>Ímpar Turbo</h3><p>Protótipo Android voltado a informações e diagnóstico do dispositivo, análise de armazenamento e orientações de manutenção conscientes das limitações do Android.</p><div class="stack"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span></div><div class="proof-gallery" data-proof="turbo" aria-label="Evidências do projeto" hidden></div><div class="status">Projeto em desenvolvimento; código privado e demonstração pública pendente.</div><p class="small">Capturas reais e vídeo demonstrativo serão incluídos após revisão de privacidade e validação.</p></article>
+    <article class="card"><div class="tag">Educação · React / TypeScript / Supabase</div><h3>Educa Brasil</h3><p>Plataforma de reforço escolar e preparação para o ENEM. Trabalho em organização de conteúdo, experiências de estudo, interfaces e estruturação de dados.</p><div class="stack"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span></div><div class="proof-gallery" data-proof="educa" aria-label="Evidências do projeto" hidden></div><div class="status">Plataforma e acervo em desenvolvimento; não publicada como produto final.</div></article>
     <article class="card"><div class="tag">Android nativo · Auditoria em andamento</div><h3>Aprende Brasil — experimento Kotlin</h3><p>Versão paralela documentada em Kotlin e Jetpack Compose, com proposta de simulados e armazenamento local. As funcionalidades e os testes descritos pelo ambiente de desenvolvimento ainda requerem verificação independente.</p><div class="stack"><span class="chip">Kotlin</span><span class="chip">Jetpack Compose</span><span class="chip">Room</span></div><div class="status">Relatório técnico recebido; código-fonte completo, testes e demonstração aguardando validação.</div></article>
-  </div>
-  <div class="callout">Outras iniciativas incluem um protótipo de jogo mobile e um e-commerce em Shopify. Os códigos proprietários, credenciais, APKs e materiais de terceiros não fazem parte deste portfólio público.</div>
+  <article class="card"><div class="tag">Jogo mobile · quadro do motor gráfico</div><h3>Operação Horizonte</h3><p>Protótipo de jogo de ação mobile com controles de toque. Um quadro da rotina gráfica da versão 1.0.13 está disponível no material de portfólio, sem comprovar desempenho em aparelho físico.</p><div class="status">Quadro real da rotina de desenho, sem vídeo de gameplay validado.</div><div class="proof-gallery" data-proof="horizonte" aria-label="Evidências de Operação Horizonte" hidden></div></article></div>
+  <div class="callout">Outras iniciativas incluem um e-commerce em Shopify. Os códigos proprietários, credenciais, APKs e materiais de terceiros não fazem parte deste portfólio público.</div>
 </div></section>
 <section class="alt" id="tecnologias"><div class="container">
   <div class="kicker">02 / Competências</div><h2>Ferramentas aplicadas a problemas</h2>
@@ -94,4 +94,36 @@
 </div></section>
 </main>
 <footer><div class="container">© 2026 Giovani Marcelo Barbare Junior · Portfólio profissional. <a href="../">Ímpar Technology</a> · <a href="en/" lang="en">English version</a></div></footer>
-</body></html>
+<script>
+(function(){
+  "use strict";
+  const media={
+    educa:{images:[
+      {src:"media/educa-brasil-entrada.webp",alt:"Prévia visual da tela inicial Aprende Brasil, Google simulado e sem dados reais",caption:"Prévia visual de 19/10/2026 — login simulado"},
+      {src:"media/educa-brasil-cadastro.webp",alt:"Prévia da tela de data de nascimento sem coleta real",caption:"Etapa visual de cadastro — não é coleta real"}
+    ],video:"media/educa-brasil-demo.mp4"},
+    turbo:{images:[],video:"media/impar-turbo-demo.mp4"},
+    horizonte:{images:[{src:"media/operacao-horizonte-quadro.webp",alt:"Quadro gerado pela rotina gráfica do jogo, mostrando avião e cenário",caption:"Quadro gerado localmente pela versão 1.0.13; não mede FPS no celular"}],video:"media/operacao-horizonte-demo.mp4"}
+  };
+  for(const gallery of document.querySelectorAll('[data-proof]')){
+    const set=media[gallery.dataset.proof];if(!set)continue;
+    for(const pic of set.images){
+      const probe=new Image();
+      probe.onload=()=>{
+        const figure=document.createElement('figure');figure.className='proof-figure';
+        const img=document.createElement('img');img.src=pic.src;img.alt=pic.alt;img.loading='lazy';img.decoding='async';img.width=390;img.height=844;
+        const caption=document.createElement('figcaption');caption.textContent=pic.caption;
+        figure.append(img,caption);gallery.append(figure);gallery.hidden=false;
+      };
+      probe.src=pic.src;
+    }
+    fetch(set.video,{method:'HEAD'}).then(response=>{
+      if(!response.ok) return;
+      const figure=document.createElement('figure');figure.className='proof-figure';
+      const video=document.createElement('video');video.src=set.video;video.controls=true;video.playsInline=true;video.preload='none';video.setAttribute('aria-label','Vídeo demonstrativo gravado do aplicativo');
+      const caption=document.createElement('figcaption');caption.textContent='Demonstração gravada — confira a versão e as funcionalidades mostradas';
+      figure.append(video,caption);gallery.append(figure);gallery.hidden=false;
+    }).catch(()=>{});
+  }
+})();
+</script></body></html>
