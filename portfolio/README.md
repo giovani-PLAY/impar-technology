@@ -5,6 +5,7 @@ Esta pasta apresenta o trabalho de **Giovani Marcelo Barbare Junior** para proce
 - Página em português: [index.html](index.html)
 - English version: [en/index.html](en/index.html)
 - Modelo pronto para o README do perfil GitHub: [GITHUB_PROFILE_README.md](GITHUB_PROFILE_README.md) (ainda não ativado no perfil)
+- Plano de mídias reais e vídeos pendentes: [MIDIAS_EVIDENCIAS.md](MIDIAS_EVIDENCIAS.md)
 - Repositório com **código público inspecionável**: [site Ímpar Technology](https://github.com/giovani-PLAY/impar-technology)
 - Perfil profissional: [LinkedIn](https://www.linkedin.com/in/giovani-barbare-426a23270/)
 
