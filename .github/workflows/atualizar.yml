@@ -1,0 +1,26 @@
+name: Solicitar publicação da main
+on:
+  push:
+    branches: [qa/atualizar-pages]
+permissions:
+  contents: read
+  pages: write
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Solicitar compilação da fonte configurada e verificar versão
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds"
+          for n in {1..15}; do
+            if curl -fsSL "https://giovani-play.github.io/impar-technology/?revisao=d47fdac-$n" | grep -q 'Ampliar arte conceitual'; then
+              echo 'Portfólio atualizado no endereço público'
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
